@@ -1,0 +1,8 @@
+position_uncertainty_m: 0.03
+altitude_uncertainty_m: 0.03
+heading_uncertainty_deg: 1.0
+roll_uncertainty_deg: 1.0
+pitch_uncertainty_deg: 1.0
+
+
+seed: -1

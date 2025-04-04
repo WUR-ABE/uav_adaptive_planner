@@ -1,0 +1,3 @@
+gt_locations_file: /home/abe/data/20240213_clustered_1/plants_clustered_1_RDNAPTRANS2008.csv
+override_locations_file: experiments/number_of_objects/clustered_1_object_locations.kmz
+override_number_of_objects: 20

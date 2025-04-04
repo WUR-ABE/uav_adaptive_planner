@@ -1,0 +1,27 @@
+base_planner:
+  sideways_overlap: 0.1
+  forward_overlap: 0.1
+
+inspection_planner:
+  max_tsp_calculation_time: 2.0
+  
+adaptive_planner:
+  weights_file: adaptive_planner/best_n.pt
+
+  base_altitude: 48.0
+  min_inspection_altitude: 12.0
+  max_inspection_altitude: 12.0
+
+  inspection_confidence: 0.8
+  rejection_confidence: 0.05
+
+  # Detection network parameters
+  imgsz: 2048
+  iou: 0.2
+  agnostic_nms: true  # E.g. different classes won't overlap
+
+  distance_threshold: 0.35
+
+  planning_strategy: AFTERWARDS
+  use_adaptive: false
+  use_tqdm: true

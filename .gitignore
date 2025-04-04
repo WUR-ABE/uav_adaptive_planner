@@ -1,0 +1,39 @@
+# Ignore folders
+/runs
+/wandb
+/paper_*
+/build
+/datasets
+/*_results
+/*_backup
+/figures
+/*.egg-info
+
+# Ignore extensions
+*.pyc
+*.pt
+*.html
+*.png
+*.tif
+*.kml
+*.mp4
+*.avi
+
+# Ignore specific files
+output.txt
+tmp.py
+tmp*.py
+
+# Do keep these files
+!/assets/adaptive_path.png
+!/adaptive_planner/plane.png
+!/adaptive_planner/marker.png
+!/adaptive_planner/best_n.pt
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets

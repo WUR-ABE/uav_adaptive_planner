@@ -1,0 +1,13 @@
+name: uniform_3
+boundary_file: fields/uniform_3.geojson
+start_position: [5.667294374220376, 51.99130512420879]
+orthomosaic_scheme_file: "/home/abe/data/20240718_uniform_3/orthomosaic_12m/12m_utm-scheme.kml"
+locations_to_ignore: # Ignore locations of GCP since they cause FP and are not in the training set
+  - [5.667557962, 51.99080125]
+  - [5.668768013, 51.99099878]
+  - [5.668566323, 51.99146910]
+  - [5.667403000, 51.99128636]
+  - [5.667690166, 51.99114909]
+  - [5.668182803, 51.99111858]
+  - [5.668419748, 51.99133810]
+  - [5.668555966, 51.99119699]

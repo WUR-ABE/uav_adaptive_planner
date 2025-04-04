@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive_planner"
+authors = [
+    {name = "Rick van Essen", email = "rick.vanessen@wur.nl"},
+]
+description = "Adaptive path planning for UAVs using detection certainty"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["drone", "path planning", "adaptive", "deep learning"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Environment :: GPU",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Framework :: IPython",
+    "Framework :: Jupyter",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dynamic = ["dependencies", "version"]
+
+[project.scripts]
+draw_field = "adaptive_planner.cli.draw_field:main"
+adaptive_planner = "adaptive_planner.cli.planner:main"
+
+# Tools
+create_detection_dataset = "tools.create_detection_dataset:main"
+flight_to_video = "tools.flight_to_video:main"
+image_detect_gps = "tools.image_detect_gps:main"
+image_gt_gps = "tools.image_gt_gps:main"
+mask_detection_dataset = "tools.mask_detection_dataset:main"
+plot_markers = "tools.plot_markers:main"
+show_image = "tools.show_image:main"
+train = "tools.train:main"
+transform_markers = "tools.transform_markers:main"
+
+# Experiments
+create_localization_uncertainty_experiment = "experiments.create_localization_uncertainty_experiment:main"
+create_number_of_objects_experiment = "experiments.create_number_of_objects_experiment:main"
+create_parameter_estimation_experiment = "experiments.create_parameter_estimation_experiment:main"
+
+[tool.setuptools.package-data]
+"adaptive_planner" = ["py.typed"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+version = {attr = "adaptive_planner.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["adaptive_planner", "tools", "experiments"] 
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.flake8-import-conventions.extend-aliases]
+torch = "th"
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+combine-as-imports = true
+extra-standard-library = ["toml", "yaml", "tap", "setuptools"]
+section-order = ["future", "standard-library", "torch_numpy", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+torch_numpy = ["cv2", "numpy", "fields2cover", "torch", "torchvision", "matplotlib"]
+
+[tool.mypy]
+exclude = ["build", "^tmp_*"]
+plugins = "numpy.typing.mypy_plugin"
+python_version = "3.10"
+warn_redundant_casts = true
+warn_return_any = false
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = """'\
+  matplotlib.*,\
+  ultralytics.*,\
+  tkintermapview.*,\
+  torchvision.*,\
+  Metashape.*,\
+  fields2cover.*,\
+  pykml.*,\
+  fast_tsp.*,\
+  tilemapbase.*,\
+  moviepy.*,\
+  rasterio.*,\
+  exiftool.*,\
+  scipy.*,\
+  sklearn.*,\
+  affine.*,\
+  codecarbon.*,\
+  simplekml.*,\
+"""
+ignore_missing_imports = true

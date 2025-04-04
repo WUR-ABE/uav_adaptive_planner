@@ -1,0 +1,3 @@
+gt_locations_file: /home/abe/data/20240423_uniform_2/plants_uniform_2_RDNAPTRANS2008.csv
+override_locations_file: experiments/number_of_objects/uniform_2_object_locations.kmz
+override_number_of_objects: 160

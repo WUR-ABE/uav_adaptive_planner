@@ -1,0 +1,13 @@
+name: clustered_4
+boundary_file: fields/clustered_4.geojson
+start_position: [5.6675730919265845, 51.99087642389226]
+orthomosaic_scheme_file: "/home/abe/data/20240801_clustered_4/orthomosaic_12m/12m_utm-scheme.kml"
+locations_to_ignore: # Ignore locations of GCP since they cause FP and are not in the training set
+  - [5.667668808, 51.99081643]
+  - [5.667553126, 51.99108479]
+  - [5.669368462, 51.99110764]
+  - [5.669294546, 51.99136696]
+  - [5.668958808, 51.99116514]
+  - [5.668606888, 51.99100118]
+  - [5.668331646, 51.99117037]
+  - [5.668052096, 51.99101028]

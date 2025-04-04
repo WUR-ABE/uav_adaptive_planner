@@ -1,0 +1,38 @@
+pyexiftool  # sudo apt install libimage-exiftool-perl
+numpy < 2.0.0
+tqdm
+opencv-python
+matplotlib
+pyproj
+tabulate
+pyyaml
+scikit-learn
+codecarbon
+shapely
+colorlog
+rasterio<=1.3.11  # https://github.com/rasterio/rasterio/issues/3211
+tkintermapview
+tk
+ultralytics>=8.3.8  # https://github.com/ultralytics/ultralytics/pull/16771
+affine
+pillow
+lxml
+tilemapbase
+moviepy<2.0.0  
+wandb
+rich  # Needed by tqdm
+fast_tsp
+scipy
+simplekml
+typed-argument-parser
+seaborn
+
+jupyter
+ipywidgets
+mypy
+types-tqdm
+types-PyYAML
+types-Pillow
+types-shapely
+types-tabulate
+lxml-stubs

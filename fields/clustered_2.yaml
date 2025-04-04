@@ -1,0 +1,13 @@
+name: clustered_2
+boundary_file: fields/clustered_2.geojson
+start_position: [5.667294374220376, 51.99130512420879]
+orthomosaic_scheme_file: "/home/abe/data/20240423_clustered_2/orthomosaic_12m/12m_utm-scheme.kml"
+locations_to_ignore: # Ignore locations of GCP since they cause FP and are not in the training set
+  - [5.667541431, 51.99082810]
+  - [5.668748595, 51.99104570]
+  - [5.668513156, 51.99114033]
+  - [5.668599842, 51.99146052]
+  - [5.668130224, 51.99131511]
+  - [5.667665623, 51.99119384]
+  - [5.667371970, 51.99132294]
+  - [5.667970390, 51.99110777]
