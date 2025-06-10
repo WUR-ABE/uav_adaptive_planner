@@ -82,7 +82,7 @@ adaptive_planner orthomosaic_sim <<path to field yaml file>> <<path to planner c
 If you find this code usefull, please consider citing our paper:
 
 ```
-@misc{vanEssen2025,
+@article{vanEssen2025,
     journal = {Smart Agricultural Technology},
     volume = {12},
     pages = {101075},
