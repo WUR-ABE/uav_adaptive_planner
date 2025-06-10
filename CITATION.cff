@@ -15,8 +15,8 @@ authors:
     orcid: "https://orcid.org/0000-0002-2579-4324"
 title: "Adaptive path planning for efficient object search by UAVs in agricultural fields"
 version: 1.0.0
-url: https://arxiv.org/abs/2504.02473
-date-released: "2025-05-03"
+url: https://doi.org/10.1016/j.atech.2025.101075
+date-released: "2025-06-10"
 preferred-citation:
   authors:
     - family-names: van Essen
@@ -32,6 +32,10 @@ preferred-citation:
       given-names: Gert
       orcid: "https://orcid.org/0000-0002-2579-4324"
   title: "Adaptive path planning for efficient object search by UAVs in agricultural fields"
-  url: https://arxiv.org/abs/2504.02473
-  type: generic
+  journal: "Smart Agricultural Technology"
+  volume: 12
+  start: 101075
+  issn: "2772-3755"
+  doi: "10.1016/j.atech.2025.101075"
+  type: article
   year: 2025

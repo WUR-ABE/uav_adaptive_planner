@@ -3,10 +3,12 @@
 ![flight-path](assets/adaptive_planner.gif "flight-path-example")
 > **Adaptive path planning for efficient object search by UAVs in agricultural fields**\
 > Rick van Essen, Eldert van Henten, Lammert Kooistra and Gert Kootstra
-> Paper: https://arxiv.org/abs/2504.02473
+> Paper: https://doi.org/10.1016/j.atech.2025.101075
 
 ## About
 This repository contains the code beloning to the paper "Adaptive path planning for efficient object search by UAVs in agricultural fields". 
+
+It contains the original code and network weights to reproduce the results in the paper. The image training data and orthomosaics are published in https://doi.org/10.4121/bbe97051-07df-4934-b634-701d91a2075e.
 
 ## Installation
 Python 3.10 is needed with all dependencies listed in [`requirements.txt`](requirements.txt) and some additional dependencies. Install using:
@@ -80,14 +82,13 @@ adaptive_planner orthomosaic_sim <<path to field yaml file>> <<path to planner c
 If you find this code usefull, please consider citing our paper:
 
 ```
-@misc{essen2025,
-    title = {Adaptive path planning for efficient object search by UAVs in agricultural fields},
-    urldate = {2025-04-03},
-    publisher = {arXiv},
-    author = {van Essen, Rick and van Henten, Eldert and Kooistra, Lammert and Kootstra, Gert},
-    month = apr,
+@misc{vanEssen2025,
+    journal = {Smart Agricultural Technology},
+    volume = {12},
+    pages = {101075},
     year = {2025},
-    note = {arXiv:2504.02473 [cs]},
+    issn = {2772-3755},
+    doi = {https://doi.org/10.1016/j.atech.2025.101075}
 }
 ```
 
