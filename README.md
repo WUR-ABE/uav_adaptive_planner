@@ -83,6 +83,7 @@ If you find this code usefull, please consider citing our paper:
 
 ```
 @article{vanEssen2025,
+    author = {Rick {van Essen} and Eldert {van Henten} and Lammert Kooistra and Gert Kootstra},
     title = {Adaptive path planning for efficient object search by UAVs in agricultural fields},
     journal = {Smart Agricultural Technology},
     volume = {12},
