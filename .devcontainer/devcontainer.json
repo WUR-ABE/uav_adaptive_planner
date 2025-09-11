@@ -1,36 +1,36 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "ABE CUDA-OpenGL Devcontainer",
+	"name": "ABE Devcontainer",
 	"build": {
 		"dockerfile": "./Dockerfile",
 		"args": {
-			"BASE_IMAGE": "nvidia/cuda:11.8.0-runtime-ubuntu22.04"
+			"BASE_IMAGE": "nvidia/cuda:11.8.0-runtime-ubuntu22.04",
+			"USERNAME": "abe"
 		},
 		"context": ".."
 	},
-
-	"forwardPorts": [5801],
-	"portsAttributes": {
-		"5801": {
-			"label": "desktop",
-			"onAutoForward": "openBrowser"
-		}
-	},
-
+	"runArgs": [
+		"--net=host",
+		"--pid=host",
+		"--ipc=host",
+		"-e",
+		"DISPLAY=${env:DISPLAY}"
+	],
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh,target=/home/abe/.ssh,type=bind,consistency=cached,readonly",
 		"source=${localEnv:HOME}/.gitconfig,target=/home/abe/.gitconfig,type=bind,consistency=cached,readonly",
-		"source=/media/rick/DATA_RICK/adaptive-planning/,target=/home/abe/data,type=bind,consistency=cached,readonly"
+		"source=${localEnv:DATA_HOME},target=/home/abe/data,type=bind,consistency=cached,readonly"
 	],
 
 	// Override LD_LIBRARY_PATH and PATH to fix CUDNN
 	"remoteEnv": {
 		"LD_LIBRARY_PATH": "/home/abe/.local/lib/python3.10/site-packages/nvidia/cublas/lib:/home/abe/.local/lib/python3.10/site-packages/nvidia/cudnn/lib",
-		"PATH": "/home/abe/.local/bin:${containerEnv:PATH}"
+		"PATH": "/home/abe/.local/bin:${containerEnv:PATH}",
+		"DATA_HOME": "/home/abe/data"
 	},
 
-	"postCreateCommand": "bash /opt/entrypoint.sh /bin/true; bash .devcontainer/post-create.sh",
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
 	"remoteUser": "abe",
 	"updateRemoteUserUID": true,
 	"customizations": {
