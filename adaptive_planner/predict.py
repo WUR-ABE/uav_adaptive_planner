@@ -477,22 +477,24 @@ if __name__ == "__main__":
 
     from ultralytics import YOLO
 
+    from adaptive_planner.utils import get_file
+
     th.set_printoptions(sci_mode=False)  # type: ignore[no-untyped-call]
 
     images = [
-        # "/home/abe/data/20240213_clustered_1/DJI_202402131154_010_MappingCluster12m/DJI_20240213122010_0007.JPG",
-        "/home/abe/data/20240213_clustered_1/DJI_202402131154_008_MappingCluster12m/DJI_20240213115805_0011.JPG",
-        # "/home/abe/data/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122013_0008.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122015_0009.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122018_0010.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122021_0011.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122024_0012.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122026_0013.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122029_0014.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122032_0015.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122035_0016.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122037_0017.JPG",
-        # "/media/rick/DATA_RICK/adaptive-planning/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122040_0018.JPG"
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster12m/DJI_20240213122010_0007.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_008_MappingCluster12m/DJI_20240213115805_0011.JPG"),
+        get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122013_0008.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122015_0009.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122018_0010.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122021_0011.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122024_0012.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122026_0013.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122029_0014.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122032_0015.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122035_0016.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122037_0017.JPG"),
+        # get_file("$DATA_HOME/20240213_clustered_1/DJI_202402131154_010_MappingCluster32m/DJI_20240213122040_0018.JPG"),
     ]
 
     model = YOLO("adaptive_planner/best_n.pt")

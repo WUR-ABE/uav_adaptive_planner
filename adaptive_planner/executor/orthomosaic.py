@@ -24,7 +24,7 @@ from adaptive_planner.io.kml import read_kml_file
 from adaptive_planner.io.orthomosaic import extract_roi_from_orthomosaic, get_tile_polygons, get_tiles_to_load, load_tiles
 from adaptive_planner.io.topcon import read_topcon_data
 from adaptive_planner.location import WGS_84, Location
-from adaptive_planner.utils import CameraParameters, LogProcessingTime, Waypoint
+from adaptive_planner.utils import CameraParameters, LogProcessingTime, Waypoint, get_file
 
 if TYPE_CHECKING:
     from typing import Any
@@ -79,8 +79,8 @@ class OrthomosaicSimConfig:
                     "When changing the number of objects, the 'gt_locations_file' and 'override_locations_file' parameters should be specified!"
                 )
 
-            self.gt_locations = read_topcon_data(Path(self.gt_locations_file))
-            self.override_locations = read_kml_file(Path(self.override_locations_file))
+            self.gt_locations = read_topcon_data(get_file(self.gt_locations_file))
+            self.override_locations = read_kml_file(get_file(self.override_locations_file))
 
     def get_override_location_names(self) -> list[str]:
         assert self.override_locations is not None

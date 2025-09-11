@@ -16,11 +16,11 @@ Python 3.10 is needed with all dependencies listed in [`requirements.txt`](requi
 ```commandline
 sudo apt-get install libimage-exiftool-perl
 pip install -r .
+export DATA_HOME=<<path to orthomosaic folders>>
 ```
-
 Additionally, `Fields2Cover` is needed. See their [website](https://fields2cover.github.io/index.html) for installation instructions.
 
-Alternatively, you can use the provided [dev container](.devcontainer).
+Alternatively, you can use the provided [dev container](.devcontainer). Make sure to put the `DATA_HOME` variable to `~/.profile` or `~/.bash_profile`.
 
 ## Run on custom orthomosaic dataset
 

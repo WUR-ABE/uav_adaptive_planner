@@ -10,6 +10,7 @@ import numpy as np
 
 from adaptive_planner.io.geojson import read_polygon_file
 from adaptive_planner.location import Location
+from adaptive_planner.utils import get_file
 
 if TYPE_CHECKING:
     from typing import Any
@@ -51,6 +52,6 @@ class Field:
                 data["name"],
                 Path(data["boundary_file"]),
                 start_location,
-                None if data["orthomosaic_scheme_file"] is None else Path(data["orthomosaic_scheme_file"]),
+                None if data["orthomosaic_scheme_file"] is None else get_file(data["orthomosaic_scheme_file"]),
                 locations_to_ignore=locations_to_ignore,
             )

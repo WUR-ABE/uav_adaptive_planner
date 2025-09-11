@@ -1,7 +1,7 @@
 pyexiftool  # sudo apt install libimage-exiftool-perl
-numpy < 2.0.0
+numpy > 2.0.0
 tqdm
-opencv-python
+opencv-python >= 4.10.0.84  # https://github.com/opencv/opencv-python/issues/943
 matplotlib
 pyproj
 tabulate
@@ -13,7 +13,7 @@ colorlog
 rasterio<=1.3.11  # https://github.com/rasterio/rasterio/issues/3211
 tkintermapview
 tk
-ultralytics>=8.3.8  # https://github.com/ultralytics/ultralytics/pull/16771
+ultralytics>=8.3.8,<8.3.190  # https://github.com/ultralytics/ultralytics/pull/16771, https://github.com/ultralytics/ultralytics/pull/21862
 affine
 pillow
 lxml

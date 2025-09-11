@@ -60,6 +60,7 @@ include = ["adaptive_planner", "tools", "experiments"]
 line-length = 140
 
 [tool.ruff.lint]
+select = ["NPY201"]
 extend-select = ["I"]
 
 [tool.ruff.lint.flake8-import-conventions.extend-aliases]

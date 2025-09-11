@@ -6,6 +6,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum, auto
 from json import loads as load_json
+import os
+from pathlib import Path
 from time import time
 from typing import TYPE_CHECKING, Any, TypeVar
 from urllib.request import urlopen
@@ -275,3 +277,16 @@ class Annotation:
             self.x + self.w,
             self.y + self.h,
         )
+
+
+def get_file(file_path: str | Path) -> Path:
+    if isinstance(file_path, str):
+        if (path := Path(file_path)).exists():
+            return path
+
+        # Load with DATA_HOME environment variable
+        if file_path.startswith("$DATA_HOME/"):
+            data_path = Path(os.environ["DATA_HOME"])
+            return data_path / file_path.replace("$DATA_HOME/", "")
+
+    return file_path
