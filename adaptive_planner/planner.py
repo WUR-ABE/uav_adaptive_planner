@@ -86,14 +86,14 @@ class AdaptivePlanner:
         inspection_fligth_path_planner: Planner,
         executor_callback: Callable[[Waypoint], NDArray[np.uint8]],
         output_folder: Path | None = None,
-        config: AdaptivePlannerConfig = AdaptivePlannerConfig(),
+        config: AdaptivePlannerConfig | None = None,
     ) -> None:
         self.field = field
         self.executor_callback = executor_callback
 
         self.base_flight_path_planner = base_flight_path_planner
         self.inspection_flight_path_planner = inspection_fligth_path_planner
-        self.config = config
+        self.config = config if config is not None else AdaptivePlannerConfig()
 
         self.detection_network = YOLO(self.config.weights_file)
         self._base_fligth_path: list[Waypoint] | None = None
